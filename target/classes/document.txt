@@ -1,0 +1,20 @@
+Generated types:
+===================
+1.Table: It creates a table hibernate_sequences with the sequence_name and value column, and value column will be equivalent to id in table.
+2.Sequence: It creates a table hibernate_sequence with the sequence_name and value column, and value column will be contain next sequence for id in table.
+Indicates that the persistence provider must assign  primary keys for the entity using a database sequence.
+3.IDENTITY: it start id value with 1.
+4.Auto:It will take best GenerationType according to DB type.(Sequence internally)
+
+
+//States of object
+//1.Transient:When object is not associated with session that time Object is in transient state.
+//2.Persistance:When object is  associated with session that time Object is in Persistance state.All changes will be tracked in that.
+//3.Detached:When object removed from hibernate session  that time Object is in transient state.
+
+Load vs Get:
+==============
+Load :it will fetch the data from cache first if data is not there in cache then it will fetch data from DB,
+if data again is not in DB then it will give ObjectNotFoundException exception.
+
+Get :it will fetch data from DB, if data  is not in DB then it will give null object.

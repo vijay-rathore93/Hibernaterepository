@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--DataSource started -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/EmployeeNew</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">vijay</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--DataSource Ended -->
+
+        <!--Hibernate Properties started -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hbm2ddl.auto">create</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!--Hibernate Properties started -->
+
+        <!--Hibernate Properties started -->
+        <mapping class="entity.Employee"/>
+
+        <!--one to one mapping started -->
+        <!--<mapping class="oneToOneMapping.DoctorSharedPrimaryKey"/>
+        <mapping class="oneToOneMapping.PatientSharedPrimaryKey"/>
+        <mapping class="oneToOneMapping.DoctorWithForeignKey"/>
+        <mapping class="oneToOneMapping.PatientWithForeignKey"/>
+        <mapping class="oneToOneMapping.DoctorWithJointable"/>
+        <mapping class="oneToOneMapping.PatientDoctorWithJointable"/>-->
+        <!--one to one mapping ended -->
+
+
+        <!--Many to many mapping started -->
+        <!--<mapping class="manyToManyMapping.Student"/>
+        <mapping class="manyToManyMapping.Subject"/>-->
+        <!--Many to many mapping ended -->
+
+        <!--one to many mapping started -->
+       <!-- <mapping class="oneToManyMapping.UserWithForeignKeyWay"/>
+        <mapping class="oneToManyMapping.RoleWithForeignKeyWay"/>-->
+
+        <mapping class="oneToManyMapping.UserWithJoinTable"/>
+        <mapping class="oneToManyMapping.RoleWithJoinTable"/>
+        <!--one to many mapping ended -->
+    </session-factory>
+</hibernate-configuration>
